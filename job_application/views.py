@@ -35,4 +35,6 @@ def index(request):
 
             messages.success(request, "Form submitted successfully")
 
+            # TODO pune secret key u din settings.py in env
+
     return render(request, "index.html")
