@@ -38,3 +38,7 @@ def index(request):
             # TODO pune secret key u din settings.py in env
 
     return render(request, "index.html")
+
+
+def about(request):
+    return render(request, "about.html")
