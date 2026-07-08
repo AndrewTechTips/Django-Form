@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class From(models.Model):
+class Form(models.Model):
     first_name = models.CharField(max_length=80)
     last_name = models.CharField(max_length=80)
     email = models.EmailField()
