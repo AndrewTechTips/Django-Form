@@ -1,8 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
 from .forms import JobApplicationForm
-from .models import JobApplication
 from django.contrib import messages
 from django.core.mail import EmailMessage
+
+
+def send_confirmation_email(application):
+    subject = "Job Application Received"
+
+    message_body = (
+        f"Hi {application.first_name},\n\n"
+        "We have successfully received your job application. "
+        "Our team will review it and get back to you shortly.\n\n"
+        "Thank you!"
+    )
+
+    email = EmailMessage(subject=subject, body=message_body, to=[application.email])
+
+    email.send()
 
 
 def index(request):
@@ -10,32 +25,19 @@ def index(request):
         form = JobApplicationForm(request.POST)
 
         if form.is_valid():
-            first_name = form.cleaned_data.get("first_name", "")
-            last_name = form.cleaned_data.get("last_name", "")
-            email = form.cleaned_data.get("email", "")
-            date = form.cleaned_data.get("date", "")
-            occupation = form.cleaned_data.get("occupation", "")
+            # Save data to db
+            application = form.save()
 
-            # Store data in the db
-            JobApplication.objects.create(
-                first_name=first_name,
-                last_name=last_name,
-                email=email,
-                date=date,
-                occupation=occupation,
-            )
+            send_confirmation_email(application)
 
-            message_body = (
-                f"A new job application was submitted. Thank you, \n{first_name}"
-            )
-            email_message = EmailMessage(
-                "Form submission confirmation", message_body, to=[email]
-            )
-            email_message.send()
+            messages.success(request, "Ypur application was submitted successfully!")
 
-            messages.success(request, "Form submitted successfully")
+            # Prevents form resubmission on refresh
+            return redirect("index")
+    else:
+        form = JobApplicationForm()
 
-    return render(request, "index.html")
+    return render(request, "index.html", {"form": form})
 
 
 def about(request):
