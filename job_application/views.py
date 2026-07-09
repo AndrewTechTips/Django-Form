@@ -1,3 +1,5 @@
+import os
+
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
@@ -46,3 +48,26 @@ def index(request):
 
 def about(request):
     return render(request, "about.html")
+
+
+def contact(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
+
+        # Send the mail to the admin
+        subject = f"New Contact Inquiry from {name}"
+        body = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+
+        email_message = EmailMessage(
+            subject=subject, body=body, to=[os.getenv("EMAIL")]
+        )
+        email_message.send()
+        messages.success(
+            request, "Thanks for reaching out! We will get back to you shortly."
+        )
+
+        return redirect("contact")
+
+    return render(request, "contact.html")
