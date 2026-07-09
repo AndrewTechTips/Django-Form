@@ -22,7 +22,7 @@ def send_confirmation_email(application):
 
 def index(request):
     if request.method == "POST":
-        form = JobApplicationForm(request.POST)
+        form = JobApplicationForm(request.POST, request.FIlES)
 
         if form.is_valid():
             # Save data to db
