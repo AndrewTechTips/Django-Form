@@ -1,6 +1,4 @@
-/* =========================================
-   Global Theme & Typography
-   ========================================= */
+/* Base theme and typography */
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background: radial-gradient(circle at top left, #0f111a 0%, #050508 100%);
@@ -20,9 +18,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #94a3b8 !important;
 }
 
-/* =========================================
-   Navbar (Sleek Glassmorphism)
-   ========================================= */
+/* Glassmorphism navbar styling */
 .navbar {
     background-color: rgba(5, 5, 8, 0.75) !important;
     backdrop-filter: blur(16px);
@@ -52,9 +48,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffffff !important;
 }
 
-/* =========================================
-   SaaS Premium Card Component
-   ========================================= */
+/* Premium card component */
 .card {
     background: linear-gradient(135deg, rgba(22, 24, 37, 0.7) 0%, rgba(13, 14, 22, 0.8) 100%);
     backdrop-filter: blur(20px);
@@ -64,9 +58,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* =========================================
-   Inputs & Form Controls
-   ========================================= */
+/* Form inputs and controls */
 .form-label {
     color: #cbd5e1 !important;
     font-size: 0.9rem;
@@ -96,13 +88,13 @@ h1, h2, h3, h4, h5, h6 {
     outline: none;
 }
 
-/* Date input custom accent */
+/* Custom date picker accent */
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1) brightness(0.8);
     cursor: pointer;
 }
 
-/* File input customization */
+/* File upload button styling */
 input[type="file"]::file-selector-button {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -118,9 +110,7 @@ input[type="file"]::file-selector-button:hover {
     background: rgba(255, 255, 255, 0.15);
 }
 
-/* =========================================
-   Premium Custom Radio Grid Tiles
-   ========================================= */
+/* Custom radio button grid */
 #id_occupation {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -151,7 +141,7 @@ input[type="file"]::file-selector-button:hover {
     width: 100%;
 }
 
-/* Efect de hover pe tile-ul de selecție */
+/* Hover state for selection tiles */
 #id_occupation label:hover {
     background: rgba(99, 102, 241, 0.04);
     border-color: rgba(99, 102, 241, 0.3);
@@ -159,7 +149,7 @@ input[type="file"]::file-selector-button:hover {
     transform: translateY(-1px);
 }
 
-/* Ascundem cercul nativ urât și construim unul custom */
+/* Hide default radio circle and apply custom styling */
 #id_occupation input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;
@@ -178,7 +168,7 @@ input[type="file"]::file-selector-button:hover {
     transition: all 0.2s ease;
 }
 
-/* Schimbarea stilului întregului container când este bifat */
+/* Highlight container when checked */
 #id_occupation label:has(input[type="radio"]:checked) {
     background: rgba(99, 102, 241, 0.08);
     border-color: #6366f1;
@@ -190,7 +180,7 @@ input[type="file"]::file-selector-button:hover {
     border-color: #6366f1;
 }
 
-/* Bulina interioară strălucitoare */
+/* Inner glowing dot for checked state */
 #id_occupation input[type="radio"]:checked::after {
     content: "";
     position: absolute;
@@ -204,9 +194,7 @@ input[type="file"]::file-selector-button:hover {
     box-shadow: 0 0 8px #6366f1;
 }
 
-/* =========================================
-   Buttons & Interactive Glow
-   ========================================= */
+/* Buttons and interactive glow effects */
 .btn-primary {
     background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
     border: none;
@@ -234,9 +222,7 @@ input[type="file"]::file-selector-button:hover {
     font-weight: 500;
 }
 
-/* =========================================
-   404 Page Premium Enhancements
-   ========================================= */
+/* 404 error page styling */
 .fw-black {
     font-weight: 900;
 }
