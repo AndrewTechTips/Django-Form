@@ -1,9 +1,8 @@
 from django import forms
+from .models import JobApplication
 
 
-class ApplicationForm(forms.Form):
-    first_name = forms.CharField(max_length=80)
-    last_name = forms.CharField(max_length=80)
-    email = forms.EmailField()
-    date = forms.DateField()
-    occupation = forms.CharField(max_length=80)
+class JobApplicationForm(forms.ModelForm):
+    class Meta:
+        model = JobApplication
+        fields = ["first_name", "last_name", "email", "date", "occupation"]

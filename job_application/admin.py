@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Form
+from .models import JobApplication
 
 
 class FormAdmin(admin.ModelAdmin):
@@ -10,4 +10,4 @@ class FormAdmin(admin.ModelAdmin):
     readonly_fields = ("occupation",)
 
 
-admin.site.register(Form, FormAdmin)
+admin.site.register(JobApplication, FormAdmin)
