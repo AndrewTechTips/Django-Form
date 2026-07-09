@@ -2,12 +2,12 @@ from django.contrib import admin
 from .models import JobApplication
 
 
-class FormAdmin(admin.ModelAdmin):
+class JobApplicationAdmin(admin.ModelAdmin):
     list_display = ("first_name", "last_name", "email")
     search_fields = ("first_name", "last_name", "email")
     list_filter = ("date", "occupation")
-    ordering = ("first_name",)
+    ordering = ("-date",)
     readonly_fields = ("occupation",)
 
 
-admin.site.register(JobApplication, FormAdmin)
+admin.site.register(JobApplication, JobApplicationAdmin)
