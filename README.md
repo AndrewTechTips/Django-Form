@@ -23,15 +23,15 @@
 ## 📸 Screenshots
 
 <div align="center">
-    <img src="assets/MD_ASSET1.png" alt="Homepage / Careers Board" width="700"/>
+    <img src="assets/MD_Asset1.png" alt="Homepage / Careers Board" width="700"/>
     <br /><br />
-    <img src="assets/MD_ASSET2.png" alt="Application Form Interface" width="350"/>
+    <img src="assets/MD_Asset2.png" alt="Application Form Interface" width="350"/>
   &nbsp;&nbsp;
-    <img src="assets/MD_Asset.png" alt="Application Form Interface" width="350"/>
-    <img src="assets/MD_ASSET3.png" alt="Application Form Interface" width="350"/>
-    <img src="assets/MD_ASSET4.png" alt="Application Form Interface" width="350"/>
-    <img src="assets/MD_ASSET6.png" alt="Application Form Interface" width="350"/>
-    <img src="assets/MD_ASSET7.png" alt="Application Form Interface" width="350"/>
+    <img src="assets/MD_Asset3.png" alt="Application Form Interface" width="350"/>
+    <img src="assets/MD_Asset4.png" alt="Application Form Interface" width="350"/>
+    <img src="assets/MD_Asset5.png" alt="Application Form Interface" width="350"/>
+    <img src="assets/MD_Asset6.png" alt="Application Form Interface" width="350"/>
+    <img src="assets/MD_Asset7.png" alt="Application Form Interface" width="350"/>
 
 
 </div>
