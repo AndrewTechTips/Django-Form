@@ -12,7 +12,12 @@ from django.core.mail import EmailMessage, EmailMultiAlternatives
 def send_confirmation_email(application):
     subject = "Application Received - Confirmation"
 
-    context = {f"first-name": application.first_name}
+    context = {
+        "first_name": application.first_name,
+        "last_name": application.last_name,
+        "occupation": application.occupation,
+    }
+
     html_content = render_to_string("emails/confirmation_email.html", context)
 
     # Fall back text
