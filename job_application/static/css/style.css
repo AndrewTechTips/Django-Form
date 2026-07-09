@@ -229,8 +229,43 @@ input[type="file"]::file-selector-button:hover {
     transform: translateY(0);
 }
 
-/* Alerte Bootstrap customizate */
 .alert {
     border-radius: 12px;
     font-weight: 500;
+}
+
+/* =========================================
+   404 Page Premium Enhancements
+   ========================================= */
+.fw-black {
+    font-weight: 900;
+}
+
+.error-code {
+    font-size: 9rem;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.25));
+}
+
+.btn-outline-custom {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #cbd5e1;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-custom:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.btn-outline-custom:active {
+    transform: translateY(0);
 }
