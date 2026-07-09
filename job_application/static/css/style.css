@@ -1,0 +1,137 @@
+/* =========================================
+   Global Theme & Typography
+   ========================================= */
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    /* Un gradient subtil și elegant pentru fundal */
+    background: radial-gradient(circle at top left, #1e1e2e 0%, #0f0f13 100%);
+    background-attachment: fixed;
+    color: #e2e8f0;
+    min-height: 100vh;
+}
+
+/* =========================================
+   Navbar (Logo vizibil și efect de sticlă)
+   ========================================= */
+.navbar {
+    background-color: rgba(15, 15, 19, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    color: #ffffff !important;
+}
+
+.brand-highlight {
+    color: #6366f1; /* Culoare accent Indigo (Modernă) */
+}
+
+.nav-link {
+    color: #94a3b8 !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ffffff !important;
+}
+
+/* =========================================
+   Cards (Design tip SaaS Premium)
+   ========================================= */
+.card {
+    background-color: rgba(30, 30, 35, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================
+   Inputs & Forms
+   ========================================= */
+.form-control, .form-select {
+    background-color: rgba(0, 0, 0, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
+    border-radius: 10px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control::placeholder {
+    color: #64748b !important;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15) !important;
+}
+
+/* =========================================
+   FIX DEFINITIV PENTRU BUTOANELE RADIO DJANGO
+   ========================================= */
+#id_occupation {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important; /* Spațiu clar între opțiuni */
+    padding-left: 0 !important;
+    margin-top: 10px !important;
+    margin-bottom: 25px !important; /* Împinge câmpul de Resume în jos */
+    list-style: none !important;
+}
+
+#id_occupation label {
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    font-weight: 400 !important;
+    color: #cbd5e1 !important;
+    margin: 0 !important;
+}
+
+/* Stilizăm bulinuța efectivă */
+#id_occupation input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px !important;
+    height: 20px !important;
+    border: 2px solid #64748b;
+    border-radius: 50%;
+    margin-right: 12px !important;
+    margin-top: 0 !important;
+    outline: none;
+    cursor: pointer !important;
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+}
+
+#id_occupation input[type="radio"]:checked {
+    border-color: #6366f1;
+    border-width: 6px; /* Creează efectul de bifat vizual */
+}
+
+/* =========================================
+   Buttons (Efecte de Hover Profesionale)
+   ========================================= */
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}

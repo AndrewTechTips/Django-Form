@@ -28,7 +28,7 @@ def send_confirmation_email(application):
 
 def index(request):
     if request.method == "POST":
-        form = JobApplicationForm(request.POST, request.FIlES)
+        form = JobApplicationForm(request.POST, request.FILES)
 
         if form.is_valid():
             # Save data to db
@@ -36,7 +36,7 @@ def index(request):
 
             send_confirmation_email(application)
 
-            messages.success(request, "Ypur application was submitted successfully!")
+            messages.success(request, "Your application was submitted successfully!")
 
             # Prevents form resubmission on refresh
             return redirect("index")
