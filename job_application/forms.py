@@ -20,7 +20,7 @@ class JobApplicationForm(forms.ModelForm):
                 attrs={"class": "form-control", "placeholder": "john.doe@example.com"}
             ),
             "date": forms.DateInput(attrs={"class": "form-control", "type": "date"}),
-            "occupation": forms.RadioSelect(attrs={"class": "form-check-input"}),
+            "occupation": forms.RadioSelect(),  # Lăsat simplu, stilizat exclusiv prin CSS-ul de mai sus
             "resume": forms.FileInput(
                 attrs={"class": "form-control", "accept": ".pdf,.doc,.docx"}
             ),

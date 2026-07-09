@@ -3,38 +3,49 @@
    ========================================= */
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    /* Un gradient subtil și elegant pentru fundal */
-    background: radial-gradient(circle at top left, #1e1e2e 0%, #0f0f13 100%);
+    background: radial-gradient(circle at top left, #0f111a 0%, #050508 100%);
     background-attachment: fixed;
-    color: #e2e8f0;
+    color: #f1f5f9;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.text-muted {
+    color: #94a3b8 !important;
 }
 
 /* =========================================
-   Navbar (Logo vizibil și efect de sticlă)
+   Navbar (Sleek Glassmorphism)
    ========================================= */
 .navbar {
-    background-color: rgba(15, 15, 19, 0.85) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    background-color: rgba(5, 5, 8, 0.75) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     letter-spacing: -0.5px;
     color: #ffffff !important;
 }
 
 .brand-highlight {
-    color: #6366f1; /* Culoare accent Indigo (Modernă) */
+    color: #6366f1;
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
 
 .nav-link {
     color: #94a3b8 !important;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.25s ease;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -42,96 +53,184 @@ body {
 }
 
 /* =========================================
-   Cards (Design tip SaaS Premium)
+   SaaS Premium Card Component
    ========================================= */
 .card {
-    background-color: rgba(30, 30, 35, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, rgba(22, 24, 37, 0.7) 0%, rgba(13, 14, 22, 0.8) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 /* =========================================
-   Inputs & Forms
+   Inputs & Form Controls
    ========================================= */
-.form-control, .form-select {
-    background-color: rgba(0, 0, 0, 0.25) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+.form-label {
+    color: #cbd5e1 !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.2px;
+}
+
+.form-control {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
     color: #ffffff !important;
-    border-radius: 10px;
-    padding: 12px 15px;
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-control::placeholder {
-    color: #64748b !important;
+    color: #475569 !important;
 }
 
-.form-control:focus, .form-select:focus {
-    background-color: rgba(0, 0, 0, 0.4) !important;
+.form-control:focus {
+    background-color: rgba(0, 0, 0, 0.35) !important;
     border-color: #6366f1 !important;
     box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15) !important;
+    outline: none;
+}
+
+/* Date input custom accent */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(0.8);
+    cursor: pointer;
+}
+
+/* File input customization */
+input[type="file"]::file-selector-button {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin-right: 12px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: rgba(255, 255, 255, 0.15);
 }
 
 /* =========================================
-   FIX DEFINITIV PENTRU BUTOANELE RADIO DJANGO
+   Premium Custom Radio Grid Tiles
    ========================================= */
 #id_occupation {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 15px !important; /* Spațiu clar între opțiuni */
-    padding-left: 0 !important;
-    margin-top: 10px !important;
-    margin-bottom: 25px !important; /* Împinge câmpul de Resume în jos */
-    list-style: none !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    padding-left: 0;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    list-style: none;
+}
+
+#id_occupation li, #id_occupation div {
+    display: flex;
+    width: 100%;
 }
 
 #id_occupation label {
-    display: flex !important;
-    align-items: center !important;
-    cursor: pointer !important;
-    font-weight: 400 !important;
-    color: #cbd5e1 !important;
-    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: #94a3b8;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
 }
 
-/* Stilizăm bulinuța efectivă */
+/* Efect de hover pe tile-ul de selecție */
+#id_occupation label:hover {
+    background: rgba(99, 102, 241, 0.04);
+    border-color: rgba(99, 102, 241, 0.3);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Ascundem cercul nativ urât și construim unul custom */
 #id_occupation input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;
-    width: 20px !important;
-    height: 20px !important;
-    border: 2px solid #64748b;
+    background: none;
+    border: 2px solid #475569;
     border-radius: 50%;
-    margin-right: 12px !important;
-    margin-top: 0 !important;
-    outline: none;
-    cursor: pointer !important;
-    transition: all 0.2s ease-in-out;
-    background-color: transparent;
+    width: 18px;
+    height: 18px;
+    margin: 0 12px 0 0 !important;
+    padding: 0;
+    float: none !important;
+    position: relative !important;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Schimbarea stilului întregului container când este bifat */
+#id_occupation label:has(input[type="radio"]:checked) {
+    background: rgba(99, 102, 241, 0.08);
+    border-color: #6366f1;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.1);
 }
 
 #id_occupation input[type="radio"]:checked {
     border-color: #6366f1;
-    border-width: 6px; /* Creează efectul de bifat vizual */
+}
+
+/* Bulina interioară strălucitoare */
+#id_occupation input[type="radio"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #6366f1;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #6366f1;
 }
 
 /* =========================================
-   Buttons (Efecte de Hover Profesionale)
+   Buttons & Interactive Glow
    ========================================= */
 .btn-primary {
     background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
     border: none;
-    border-radius: 10px;
-    padding: 12px 24px;
+    border-radius: 12px;
+    padding: 14px 28px;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Alerte Bootstrap customizate */
+.alert {
+    border-radius: 12px;
+    font-weight: 500;
 }
