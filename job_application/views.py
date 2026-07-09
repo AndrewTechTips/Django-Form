@@ -1,22 +1,26 @@
 from django.shortcuts import render, redirect
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 
 from .forms import JobApplicationForm
 from django.contrib import messages
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage, EmailMultiAlternatives
 
 
 def send_confirmation_email(application):
-    subject = "Job Application Received"
+    subject = "Application Received - Confirmation"
 
-    message_body = (
-        f"Hi {application.first_name},\n\n"
-        "We have successfully received your job application. "
-        "Our team will review it and get back to you shortly.\n\n"
-        "Thank you!"
+    context = {f"first-name": application.first_name}
+    html_content = render_to_string("emails/confirmation_email.html", context)
+
+    # Fall back text
+    text_content = strip_tags(html_content)
+
+    email = EmailMultiAlternatives(
+        subject=subject, body=text_content, to=[application.email]
     )
 
-    email = EmailMessage(subject=subject, body=message_body, to=[application.email])
-
+    email.attach_alternative(html_content, "text/html")
     email.send()
 
 
